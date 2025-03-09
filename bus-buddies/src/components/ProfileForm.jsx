@@ -14,14 +14,14 @@ export default function ProfileForm({ session }) {
   const [message, setMessage] = useState({ text: '', type: '' });
   
   // Form state
-  const [name, setName] = useState('');  // Added the name state
+  const [name, setName] = useState('');  
   const [busRoute, setBusRoute] = useState('');
-  const [busTime, setBusTime] = useState('');  // Time value will be stored here
+  const [busTime, setBusTime] = useState('');  
   const [yearLevel, setYearLevel] = useState('');
-  const [hobbies, setHobbies] = useState(''); // Change to single string
+  const [hobbies, setHobbies] = useState(''); 
   
-  // Sample data for dropdowns
-  const busRoutes = ['R4', '99', '25', '33', '44', '84'];
+  const busRoutes = ['R4', '99', '4', '14', '25', '33', '49', '84', '9', '44', 'N17'];
+
   const yearLevels = ['1', '2', '3', '4', '5+', 'Graduate'];
 
   useEffect(() => {

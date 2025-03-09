@@ -5,9 +5,16 @@ import ChatButton from '@/components/ChatButton';
 import { getSession, requireAuth } from '@/lib/auth';
 import { findMatches } from '@/utils/findMatches';
 import Match from '@/components/Match';
+import LetsChatButton from '@/components/LetsChatButton';
+
 
 export default async function Home() {
     const session = await getSession();
+
+    const handleClick = async () => {
+      router.refresh();
+      router.push('/chat');
+    };
 
     let matches = [];
     if (session) {
@@ -62,9 +69,7 @@ export default async function Home() {
                                 <p><strong>Major:</strong> {match.major}</p>
                                 <p><strong>Year:</strong> {match.year}</p>
                                 <p><strong>Matching Hobbies:</strong> {match.matchingHobbies || 0}</p>
-                                <button className="mt-2 px-4 py-2 bg-white text-sky-600 rounded-full font-medium hover:bg-sky-100 transition-colors">
-            Let's Chat
-          </button>
+                                <LetsChatButton />
                             </div>
                         ))}
     </div>

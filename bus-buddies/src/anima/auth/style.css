@@ -1,0 +1,144 @@
+.auth {
+    background-color: #e9e9e9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .auth .overlap-group-wrapper {
+    background-color: #e9e9e9;
+    height: 1028px;
+    width: 1440px;
+  }
+  
+  .auth .overlap-group {
+    background-image: url(https://c.animaapp.com/xCEhhcCJ/img/mask-group.png);
+    background-size: 100% 100%;
+    height: 1028px;
+    position: relative;
+  }
+  
+  .auth .text-wrapper {
+    color: #000000;
+    font-family: "Lexend", Helvetica;
+    font-size: 48px;
+    font-weight: 400;
+    left: 410px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 147px;
+  }
+  
+  .auth .div {
+    color: #000000;
+    font-family: "Space Grotesk", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 513px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 249px;
+    width: 142px;
+  }
+  
+  .auth .p {
+    color: #000000;
+    font-family: "Space Grotesk", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 369px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 532px;
+  }
+  
+  .auth .text-wrapper-2 {
+    color: #3b3b3b;
+    font-family: "Space Grotesk", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 513px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 337px;
+    width: 380px;
+  }
+  
+  .auth .text-wrapper-3 {
+    color: #3b3b3b;
+    font-family: "Space Grotesk", Helvetica;
+    font-size: 16px;
+    font-weight: 400;
+    left: 513px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 470px;
+    width: 380px;
+  }
+  
+  .auth .rectangle {
+    height: 44px;
+    left: 513px;
+    position: absolute;
+    top: 285px;
+    width: 413px;
+  }
+  
+  .auth .overlap {
+    border-radius: 43px;
+    height: 76px;
+    left: 594px;
+    position: absolute;
+    top: 601px;
+    width: 251px;
+  }
+  
+  .auth .rectangle-2 {
+    background-color: #06aee1;
+    border-radius: 43px;
+    height: 76px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 251px;
+  }
+  
+  .auth .text-wrapper-4 {
+    color: #000000;
+    font-family: "Space Grotesk", Helvetica;
+    font-size: 36px;
+    font-weight: 500;
+    left: 47px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 14px;
+  }
+  
+  .auth .text-wrapper-5 {
+    color: #000000;
+    font-family: "Space Grotesk", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 513px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 382px;
+    width: 170px;
+  }
+  
+  .auth .img {
+    height: 44px;
+    left: 513px;
+    position: absolute;
+    top: 418px;
+    width: 413px;
+  }
+  

@@ -12,7 +12,7 @@ export default function Home() {
   };
 
   const handleLogInClick = () => {
-    alert("Log In button clicked!");
+    router.push("/login");
   };
 
   return (

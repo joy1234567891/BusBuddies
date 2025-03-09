@@ -52,7 +52,7 @@ export default async function Home() {
                         </div>
 
                         <div className="rounded-xl bg-sky-300 p-8 m-4 shadow-lg w-full sm:w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto">
-                            <h2 className="text-xl text-gray-800 font-semibold">Student Only</h2>
+                            <h2 className="text-xl text-gray-800 font-semibold">Students Only</h2>
                             <p className="text-lg text-gray-700">UBC student emails required for sign up.</p>
                         </div>
                     </div>

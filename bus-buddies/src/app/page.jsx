@@ -51,7 +51,7 @@ export default async function Home() {
       </div>
     </div>
     <div className="flex flex-col items-center justify-center">
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <div className="grid grid-cols-3 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
     {matches.map((match, index) => (
                             <div key={index} className="flex flex-col justify-center items-center bg-sky-300 p-6 rounded-lg shadow-md">
                                 <h3 className="text-xl font-semibold">{match.name}</h3>

@@ -133,11 +133,3 @@ export async function nonMatches(userId) {
     return result;
 }
 
-// Example usage
-findMatches('1be0ddeb-3625-443c-bcd9-963740af4fba').then(matches => {
-    console.log('Matches:', matches); // Output: Sorted list of user objects
-});
-
-nonMatches('1be0ddeb-3625-443c-bcd9-963740af4fba').then(nonmatches => {
-    console.log('Non-Matches:', nonmatches);
-});

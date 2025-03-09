@@ -1,5 +1,3 @@
-import "../tailwind.css";
-import "../tailwind.config.js";
 import "../global.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";

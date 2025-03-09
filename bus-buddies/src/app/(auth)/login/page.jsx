@@ -14,7 +14,7 @@ export default async function LoginPage() {
     <div className="container mx-auto px-4">
       <AuthForm type="login" />
       <p className="text-center mt-4">
-        Don&apos;t have an account?{' '}
+        Log in to your account or{' '}
         <Link href="/register" className="text-blue-500 hover:underline">
           Register
         </Link>

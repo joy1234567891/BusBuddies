@@ -1,6 +1,6 @@
 "use client"
 
-export default function Match({ name, hobbies, busRoute, busTime, yearLevel }) {
+export default function Match({ name, hobbies, busRoute, busTime, yearLevel, major, faculty }) {
     const hobbyList = hobbies ? hobbies.split(' ') : [];
     
     return (
@@ -9,6 +9,9 @@ export default function Match({ name, hobbies, busRoute, busTime, yearLevel }) {
           <h2 className="text-2xl font-bold mb-2">{name}</h2>
           
           <p className="text-sm mb-2">Year: {yearLevel}</p>
+          <p className="text-sm mb-2">Faculty: {faculty}</p>
+          <p className="text-sm mb-2">Major: {major}</p>
+
           
           <div className="flex flex-wrap justify-center gap-2 mb-2">
             {hobbyList.map((hobby, index) => (

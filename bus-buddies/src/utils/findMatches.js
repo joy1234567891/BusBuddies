@@ -21,6 +21,14 @@ function timeDifferenceInMinutes(time1, time2) {
     return Math.abs(timeToMinutes(time1) - timeToMinutes(time2));
 }
 
+// Helper function to normalize hobbies (trim spaces and handle extra spaces)
+function normalizeHobbies(hobbies) {
+    return hobbies
+        .split(' ') // Split by space
+        .map(hobby => hobby.trim()) // Trim each hobby
+        .filter(hobby => hobby.length > 0); // Remove empty strings
+}
+
 export async function findMatches(userId) {
     // Retrieve data for the specified user
     const { data: userData, error: userError } = await supabase
@@ -38,7 +46,7 @@ export async function findMatches(userId) {
 
     const targetRoute = userData.route;
     const targetDepartureTime = userData.departure_time;
-    const targetHobbies = userData.hobbies.split(' '); // Split hobbies string into an array
+    const targetHobbies = userData.hobbies; // Hobbies as a string
 
     // Fetch all users from the Supabase table
     const { data: usersList, error: usersError } = await supabase
@@ -61,10 +69,13 @@ export async function findMatches(userId) {
 
     console.log('Filtered Users:', filteredUsers);
 
+    // Normalize target hobbies
+    const targetHobbiesNormalized = normalizeHobbies(targetHobbies);
+
     // Collect matched users with their matching hobby count
     const matchedUsers = filteredUsers.map(user => {
-        const userHobbies = user.hobbies.split(' '); // Split hobbies string into an array
-        const matchingHobbies = userHobbies.filter(hobby => targetHobbies.includes(hobby)).length;
+        const userHobbies = normalizeHobbies(user.hobbies); // Normalize user hobbies
+        const matchingHobbies = userHobbies.filter(hobby => targetHobbiesNormalized.includes(hobby)).length;
         return { ...user, matchingHobbies };
     });
 

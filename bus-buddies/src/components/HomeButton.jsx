@@ -7,15 +7,14 @@ export default function LogoutButton() {
   const router = useRouter();
   const supabase = createClient();
 
-  const handleLogout = async () => {
-    await supabase.auth.signOut();
+  const handleClick = async () => {
     router.refresh();
     router.push('/');
   };
 
   return (
     <button
-      onClick={handleLogout}
+      onClick={handleClick}
       className="bg-sky-500 text-white py-2 px-4 rounded-xl hover:bg-sky-600"
     >
       Home

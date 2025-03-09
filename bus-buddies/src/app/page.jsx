@@ -149,7 +149,7 @@ export default async function Home() {
                     </div>
 
                     <div className="flex flex-col items-center justify-center w-full max-w-7xl mx-auto p-4 space-y-6">
-                        <p className="text-2xl text-gray-400 font-bold mt-12 sm:mt-8 text-center">Why use BusBuddies?</p>
+                        <p className="text-2xl text-black font-bold mt-12 sm:mt-8 text-center">Why use BusBuddies?</p>
 
                         {/* Repeat this block for other sections */}
                         <div className="rounded-xl bg-sky-300 p-8 m-4 shadow-lg w-full sm:w-full md:w-3/4 lg:w-2/3 xl:w-1/2 mx-auto">

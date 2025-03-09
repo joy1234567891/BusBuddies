@@ -1,13 +1,13 @@
 import React from "react";
-import "../src/app/globals.css";
+// import "../src/app/globals.css";
 
 const Chat = () => {
   return (
     <div className="w-screen h-screen bg-gray-900 flex flex-col text-white">
       {/* Navbar */}
-      <div className="flex items-center justify-between bg-gray-800 p-4">
+      <div className="flex items-center justify-between bg-gray-800 h-15 p-4">
         <div className="flex items-center">
-          <div className="bg-blue-500 text-white font-bold py-1 px-3 rounded-lg">BusBuddies</div>
+        <img className="m-4 p-4 w-40 h-40" src="/logo.svg" alt="Logo" />
         </div>
         <div className="flex space-x-6">
           <span>Matches</span>
@@ -38,7 +38,7 @@ const Chat = () => {
           <div className="flex items-center p-4 bg-gray-300">
             <div className="w-12 h-12 bg-gray-400 rounded-full"></div>
             <h2 className="text-black ml-4 font-bold text-lg">John</h2>
-            <div className="ml-auto text-black space-x-4">
+            <div className="ml-auto text-black space-y-2 flex flex-col">
               <span>Report</span>
               <span>Block</span>
             </div>
@@ -46,18 +46,21 @@ const Chat = () => {
 
           {/* Chat Messages */}
           <div className="flex-grow p-4 flex flex-col space-y-2 overflow-auto">
-            <div className="bg-gray-300 p-2 rounded-lg self-start">hey, are you taking the 99 B-line tomorrow?</div>
-            <div className="bg-gray-300 p-2 rounded-lg self-start">yes totally!</div>
-            <div className="bg-gray-300 p-2 rounded-lg self-start">when?</div>
-            <div className="bg-blue-400 text-white p-2 rounded-lg self-end">hi, yes i am</div>
-            <div className="bg-blue-400 text-white p-2 rounded-lg self-end">let’s meet up!</div>
-            <div className="bg-blue-400 text-white p-2 rounded-lg self-end">i kind of want a blue chip cookie first, wanna come with?</div>
+            <div className="bg-gray-300 p-2 rounded-3xl self-start text-black">hey, are you taking the 99 B-line tomorrow?</div>
+            <div className="bg-blue-300 p-2 rounded-3xl self-end text-black">hi, yes i am</div>
+            <div className="bg-blue-300 p-2 rounded-3xl self-end text-black">let’s meet up!</div>
+            <div className="bg-blue-300 p-2 rounded-3xl self-end text-black">i kind of want a blue chip cookie first, wanna come with?</div>
+            <div className="bg-gray-300 p-2 rounded-3xl self-start text-black">yes totally!</div>
+            <div className="bg-gray-300 p-2 rounded-3xl self-start text-black">when?</div>
           </div>
 
           {/* Chat Input */}
-          <div className="p-4 bg-gray-300 flex items-center">
-            <input className="flex-grow p-2 rounded-lg" placeholder="Type a message..." />
-            <button className="bg-blue-400 text-white p-2 rounded-full ml-2">▶</button>
+          <div className="p-2 bg-gray-300 flex items-center">
+            <input className="flex-grow p-2 rounded-3xl bg-neutral-50 text-black h-18" placeholder="Type a message..." />
+            <div className="flex flex-col items-center">
+              <img className="m-2 w-8 h-8" src="/send.svg" alt="Send" />
+              <img className="m-2 w-8 h-8" src="/emojis.svg" alt="Emojis" />
+            </div>
           </div>
         </div>
       </div>

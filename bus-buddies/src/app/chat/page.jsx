@@ -46,12 +46,12 @@ const Chat = () => {
 
           {/* Chat Messages */}
           <div className="flex-grow p-4 flex flex-col space-y-2 overflow-auto">
-            <div className="bg-gray-300 p-2 rounded-3xl self-start text-black">hey, are you taking the 99 B-line tomorrow?</div>
-            <div className="bg-blue-300 p-2 rounded-3xl self-end text-black">hi, yes i am</div>
-            <div className="bg-blue-300 p-2 rounded-3xl self-end text-black">let’s meet up!</div>
-            <div className="bg-blue-300 p-2 rounded-3xl self-end text-black">i kind of want a blue chip cookie first, wanna come with?</div>
-            <div className="bg-gray-300 p-2 rounded-3xl self-start text-black">yes totally!</div>
-            <div className="bg-gray-300 p-2 rounded-3xl self-start text-black">when?</div>
+            <div className="bg-gray-300 py-2 px-4 rounded-3xl self-start text-black">hey, are you taking the 99 B-line tomorrow?</div>
+            <div className="bg-blue-300 py-2 px-4 rounded-3xl self-end text-black">hi, yes i am</div>
+            <div className="bg-blue-300 py-2 px-4 rounded-3xl self-end text-black">let’s meet up!</div>
+            <div className="bg-blue-300 py-2 px-4 rounded-3xl self-end text-black">i kind of want a blue chip cookie first, wanna come with?</div>
+            <div className="bg-gray-300 py-2 px-4 rounded-3xl self-start text-black">yes totally!</div>
+            <div className="bg-gray-300 py-2 px-4 rounded-3xl self-start text-black">when?</div>
           </div>
 
           {/* Chat Input */}

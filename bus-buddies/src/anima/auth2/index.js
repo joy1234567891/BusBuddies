@@ -1,1 +1,0 @@
-export { Auth2 } from "./auth2";

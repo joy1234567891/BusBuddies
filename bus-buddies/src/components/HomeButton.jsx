@@ -17,7 +17,7 @@ export default function HomeButton() {
       onClick={handleClick}
       className="text-sky-500 py-2 px-4 rounded-xl hover:text-sky-700"
     >
-      Home
+      Matches
     </button>
   );
 }

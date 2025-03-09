@@ -40,14 +40,19 @@ export default function AuthForm({ type }) {
   
         if (error) throw error;
   
-        // Create profile record with the new user's ID
         if (data && data.user) {
+          // Get current time in HH:MM format
+          const now = new Date();
+          const hours = String(now.getHours()).padStart(2, '0');
+          const minutes = String(now.getMinutes()).padStart(2, '0');
+          const currentTime = `${hours}:${minutes}`;
+          
           const profileData = {
             id: data.user.id,
-            route: null,
-            departure_time: null,
-            year: null,
-            hobbies: null,
+            route: "",
+            departure_time: currentTime,
+            year: "",
+            hobbies: "",
           };
   
           const { error: profileError } = await supabase

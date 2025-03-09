@@ -3,13 +3,13 @@
 import { createClient } from '@/lib/supabase/client';
 import { useRouter } from 'next/navigation';
 
-export default function HomeButton() {
+export default function ProfileButton() {
   const router = useRouter();
   const supabase = createClient();
 
   const handleClick = async () => {
     router.refresh();
-    router.push('/');
+    router.push('/dashboard');
   };
 
   return (
@@ -17,7 +17,7 @@ export default function HomeButton() {
       onClick={handleClick}
       className="text-sky-500 py-2 px-4 rounded-xl hover:text-sky-700"
     >
-      Home
+      Profile
     </button>
   );
 }

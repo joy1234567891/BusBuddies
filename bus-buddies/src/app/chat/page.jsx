@@ -1,4 +1,8 @@
 import React from "react";
+import LogoutButton from '@/components/LogoutButton';
+import HomeButton from '@/components/HomeButton';
+import ProfileButton from "@/components/ProfileButton";
+import ChatButton from "@/components/ChatButton"
 // import "../src/app/globals.css";
 
 const Chat = () => {
@@ -10,10 +14,14 @@ const Chat = () => {
         <img className="m-4 p-4 w-40 h-40" src="/logo.svg" alt="Logo" />
         </div>
         <div className="flex space-x-6">
-          <span>Matches</span>
-          <span className="font-bold">Chats</span>
-          <span>My Profile</span>
-          <span>Sign Out</span>
+          <HomeButton />
+          {/* <span>Matches</span> */}
+          <ChatButton />
+          <ProfileButton />
+          <LogoutButton />
+          {/* <span className="font-bold">Chats</span> */}
+          {/* <span>My Profile</span>
+          <span>Sign Out</span> */}
         </div>
       </div>
 

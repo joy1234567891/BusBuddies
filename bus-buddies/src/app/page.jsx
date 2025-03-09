@@ -18,7 +18,7 @@ export default async function Home() {
     return (
         <div>
             {session ? (
-              //June's original code
+              //June's original code (not styled)
                 // <div>
                 //     <h1>Welcome back, here are your matches!</h1>
                 //     <LogoutButton />
@@ -35,39 +35,103 @@ export default async function Home() {
                 //         ))}
                 //     </div>
                 // </div>
-      <div className="min-h-screen bg-gray-50">
-      <div className="container mx-auto px-4 py-10">
-        <div className="flex justify-between items-center mb-6">
-          <h1 className="text-3xl font-bold">On Your Route</h1>
-          <div className="flex gap-4">
-            <HomeButton />
-            <ProfileButton />
-            <ChatButton />
-            <LogoutButton />
-          </div>
-        </div>
+
+                //styled
+    //   <div className="min-h-screen bg-gray-50">
+    //   <div className="container mx-auto px-4 py-10">
+    //     <div className="flex justify-between items-center mb-6">
+    //       <h1 className="text-3xl font-bold">On Your Route</h1>
+    //       <div className="flex gap-4">
+    //         <HomeButton />
+    //         <ProfileButton />
+    //         <ChatButton />
+    //         <LogoutButton />
+    //       </div>
+    //     </div>
         
-        {/* Display matches in a grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-          {matches.map((match, index) => (
-            <div key={index} className="flex justify-center">
-              <Match 
-                name={match.name}
-                hobbies={match.hobbies}
-                busRoute={match.route}
-                busTime={match.departure_time}
-                matchingHobbies={match.matchingHobbies || 0}
-                yearLevel={match.year}
-                faculty={match.faculty}
-                major={match.major}
-              />
-            </div>
-          ))}
-        </div>
+    //     {/* Display matches in a grid */}
+    //     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+    //       {matches.map((match, index) => (
+    //         <div key={index} className="flex justify-center">
+    //           <Match 
+    //             name={match.name}
+    //             hobbies={match.hobbies}
+    //             busRoute={match.route}
+    //             busTime={match.departure_time}
+    //             matchingHobbies={match.matchingHobbies || 0}
+    //             yearLevel={match.year}
+    //             faculty={match.faculty}
+    //             major={match.major}
+    //           />
+    //         </div>
+    //       ))}
+    //     </div>
+    //   </div>
+    // </div>
+
+
+  //   <div className="min-h-screen bg-gray-50">
+  //   <div className="container mx-auto px-4 py-10">
+  //     <div className="flex justify-between items-center mb-6">
+  //       <h1 className="text-3xl font-bold">On Your Route</h1>
+  //       <div className="flex gap-4">
+  //         <HomeButton />
+  //         <ProfileButton />
+  //         <ChatButton />
+  //         <LogoutButton />
+  //       </div>
+  //     </div>
+      
+  //     {/* Display matches in a grid */}
+  //     <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 gap-8">
+  //       {matches.map((match, index) => (
+  //         <div key={index} className="flex justify-center">
+  //           <Match 
+  //             name={match.name}
+  //             hobbies={match.hobbies}
+  //             busRoute={match.route}
+  //             busTime={match.departure_time}
+  //             matchingHobbies={match.matchingHobbies || 0}
+  //             yearLevel={match.year}
+  //             faculty={match.faculty}
+  //             major={match.major}
+  //           />
+  //         </div>
+  //       ))}
+  //     </div>
+  //   </div>
+  // </div>
+  <div className="min-h-screen bg-gray-50">
+  <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="flex justify-between items-center mb-6">
+      <h1 className="text-3xl font-bold">On Your Route</h1>
+      <div className="flex gap-4">
+        <HomeButton />
+        <ProfileButton />
+        <ChatButton />
+        <LogoutButton />
       </div>
     </div>
-                
-
+    <div className="flex flex-col items-center justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+      {matches.map((match, index) => (
+        <div key={index}>
+          <Match 
+            name={match.name}
+            hobbies={match.hobbies}
+            busRoute={match.route}
+            busTime={match.departure_time}
+            matchingHobbies={match.matchingHobbies || 0}
+            yearLevel={match.year}
+            faculty={match.faculty}
+            major={match.major}
+          />
+        </div>
+      ))}
+    </div>
+    </div>
+  </div>
+</div>
             ) : (
                 <div className="flex flex-col items-center justify-center min-h-screen">
                     <img className="m-4 p-4 md:w-1/2 sm:w-full sm:h-auto" src="/logo.svg" alt="Logo" />

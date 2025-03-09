@@ -14,7 +14,6 @@ export default function Match({ name, hobbies, busRoute, busTime, yearLevel, maj
 
           
           <div className="flex flex-wrap justify-center gap-2 mb-2">
-            Hobbies:
             {hobbyList.map((hobby, index) => (
               <span 
                 key={index} 

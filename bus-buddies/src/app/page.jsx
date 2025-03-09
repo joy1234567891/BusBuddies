@@ -1,16 +1,88 @@
 import LogoutButton from '@/components/LogoutButton';
+import HomeButton from '@/components/HomeButton';
+import ChatButton from '@/components/ChatButton';
+import Match from '@/components/Match';
 import { getSession, requireAuth } from '@/lib/auth'; 
+import ProfileButton from '@/components/ProfileButton';
 
 export default async function Home() {
   const session = await getSession();
+  const matchesData = [
+    {
+      id: 1,
+      name: "Josh",
+      yearLevel: "4",
+      hobbies: "reading swimming",
+      busRoute: "99",
+      busTime: "12:45pm"
+    },
+    {
+      id: 2,
+      name: "Harry",
+      yearLevel: "Graduate",
+      hobbies: "basketball gaming music",
+      busRoute: "99",
+      busTime: "12:15pm"
+      
+    },
+    {
+      id: 3,
+      name: "Sarah",
+      yearLevel: "5+",
+      hobbies: "art coding photography",
+      busRoute: "99",
+      busTime: "12:30pm"
+    },
+    {
+      id: 4,
+      name: "John",
+      yearLevel: "Year 1",
+      hobbies: "soccer debate",
+      busRoute: "99",
+      busTime: "1:00pm"
+    }
+  ];
 
   return (
     <div>
       {session ? (
-        <div>
-        <h1>Welcome back, here are your matches!</h1>
-        <LogoutButton />
-        </div>
+       <div className="min-h-screen bg-gray-50">
+       <div className="container mx-auto px-4 py-10">
+         <div className="flex justify-between items-center mb-6">
+           <h1 className="text-3xl font-bold">On Your Route</h1>
+           <div className="flex gap-4">
+             <HomeButton />
+             <ProfileButton />
+              <ChatButton />
+             <LogoutButton />
+           </div>
+         </div>
+         
+         {/* Bus route filters
+         <div className="mb-6">
+           <h2 className="text-xl font-semibold mb-2">12pm-1pm Routes</h2>
+           <div className="flex gap-3">
+             <span className="px-4 py-2 bg-sky-500 text-white rounded-full">Bus 25</span>
+             <span className="px-4 py-2 bg-sky-500 text-white rounded-full">Bus 33</span>
+           </div>
+         </div> */}
+         
+         {/* Display matches in a grid */}
+         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+           {matchesData.map(match => (
+             <div key={match.id} className="flex justify-center">
+               <Match 
+                 name={match.name}
+                 yearLevel={match.yearLevel}
+                 hobbies={match.hobbies}
+                 busRoute={match.busRoute}
+                 busTime={match.busTime}
+               />
+             </div>
+           ))}
+         </div>
+       </div>
+     </div>
       ) : (
         <div className="flex flex-col items-center justify-center min-h-screen">
         <img className="m-4 p-4 md:w-1/2 sm:w-full sm:h-auto" src="/logo.svg" alt="Logo" />

@@ -82,66 +82,6 @@ export default function AuthForm({ type }) {
   };
   
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   setError(null);
-  //   setEmailError('');  // Clear email error on submit
-  //   setLoading(true);
-  
-  //   try {
-  //     if (type === 'login') {
-  //       const { error } = await supabase.auth.signInWithPassword({
-  //         email,
-  //         password,
-  //       });
-  //       if (error) throw error;
-  //     } else {
-  //       // Sign up flow
-  //       const { data, error } = await supabase.auth.signUp({
-  //         email,
-  //         password,
-  //         options: {
-  //           emailRedirectTo: `${window.location.origin}/callback`,
-  //         },
-  //       });
-
-  //       if (error) throw error;
-
-  //       // Create profile record with the new user's ID
-  //       if (data && data.user) {
-  //         const profileData = {
-  //           id: data.user.id,
-  //           route: null,
-  //           departure_time: null,
-  //           year: null,
-  //           hobbies: null,
-  //         };
-
-  //         const { error: profileError } = await supabase
-  //           .from('user_profile')
-  //           .insert([profileData]);
-
-  //         if (profileError) {
-  //           throw profileError;
-  //         }
-  //       }
-
-  //       setEmail('');
-  //       setPassword('');
-  //       alert('Check your email for the confirmation link');
-  //     }
-
-  //     router.refresh();
-  //     if (type === 'login') {
-  //       router.push('/dashboard');
-  //     }
-  //   } catch (error) {
-  //     setError(error.message || 'An error occurred');
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   const handleEmailChange = (e) => {
     const value = e.target.value;
     setEmail(value);

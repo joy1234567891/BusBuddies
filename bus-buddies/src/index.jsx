@@ -1,9 +1,7 @@
-import "../tailwind.css";
-import "../tailwind.config.js";
 import "../global.css";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { Home } from "./pages/Home";
+import { Home } from "../pages/Home";
 
 createRoot(document.getElementById("app")).render(
   <StrictMode>

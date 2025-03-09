@@ -1,6 +1,10 @@
-import LogoutButton from '@/components/LogoutButton';
+import LogoutButton from '@/components/LogoutButton'; 
+import HomeButton from '@/components/HomeButton';
+import ProfileButton from '@/components/ProfileButton';
+import ChatButton from '@/components/ChatButton';
 import { getSession, requireAuth } from '@/lib/auth';
 import { findMatches } from '@/utils/findMatches';
+import Match from '@/components/Match';
 
 export default async function Home() {
     const session = await getSession();
@@ -14,22 +18,55 @@ export default async function Home() {
     return (
         <div>
             {session ? (
-                <div>
-                    <h1>Welcome back, here are your matches!</h1>
-                    <LogoutButton />
-                    {/* Display Matches */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {matches.map((match, index) => (
-                            <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                                <h3 className="text-xl font-semibold">{match.name}</h3>
-                                <p><strong>Hobbies:</strong> {match.hobbies}</p>
-                                <p><strong>Departure Time:</strong> {match.departure_time}</p>
-                                <p><strong>Route:</strong> {match.route}</p>
-                                <p><strong>Matching Hobbies:</strong> {match.matchingHobbies || 0}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+              //June's original code
+                // <div>
+                //     <h1>Welcome back, here are your matches!</h1>
+                //     <LogoutButton />
+                //     {/* Display Matches */}
+                //     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                //         {matches.map((match, index) => (
+                //             <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                //                 <h3 className="text-xl font-semibold">{match.name}</h3>
+                //                 <p><strong>Hobbies:</strong> {match.hobbies}</p>
+                //                 <p><strong>Departure Time:</strong> {match.departure_time}</p>
+                //                 <p><strong>Route:</strong> {match.route}</p>
+                //                 <p><strong>Matching Hobbies:</strong> {match.matchingHobbies || 0}</p>
+                //             </div>
+                //         ))}
+                //     </div>
+                // </div>
+      <div className="min-h-screen bg-gray-50">
+      <div className="container mx-auto px-4 py-10">
+        <div className="flex justify-between items-center mb-6">
+          <h1 className="text-3xl font-bold">On Your Route</h1>
+          <div className="flex gap-4">
+            <HomeButton />
+            <ProfileButton />
+            <ChatButton />
+            <LogoutButton />
+          </div>
+        </div>
+        
+        {/* Display matches in a grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {matches.map((match, index) => (
+            <div key={index} className="flex justify-center">
+              <Match 
+                name={match.name}
+                hobbies={match.hobbies}
+                busRoute={match.route}
+                busTime={match.departure_time}
+                matchingHobbies={match.matchingHobbies || 0}
+                yearLevel={match.year}
+                faculty={match.faculty}
+                major={match.major}
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+                
 
             ) : (
                 <div className="flex flex-col items-center justify-center min-h-screen">

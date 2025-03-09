@@ -16,8 +16,8 @@ const Chat = () => {
         <div className="flex space-x-6">
           <HomeButton />
           {/* <span>Matches</span> */}
-          <ChatButton />
           <ProfileButton />
+          <ChatButton />
           <LogoutButton />
           {/* <span className="font-bold">Chats</span> */}
           {/* <span>My Profile</span>

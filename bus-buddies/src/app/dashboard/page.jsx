@@ -2,6 +2,8 @@ import { requireAuth } from '@/lib/auth';
 import LogoutButton from '@/components/LogoutButton';
 import ProfileForm from '@/components/ProfileForm';
 import HomeButton from '@/components/HomeButton';
+import ProfileButton from '@/components/ProfileButton';
+import ChatButton from '@/components/ChatButton';
 import { findMatches } from '@/utils/findMatches'; // Import the findMatches function
 
 export default async function DashboardPage() {
@@ -17,6 +19,8 @@ export default async function DashboardPage() {
                 <h1 className="text-3xl font-bold">Your Profile</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <HomeButton />
+                    <ProfileButton />
+                    <ChatButton />
                     <LogoutButton />
                 </div>
             </div>

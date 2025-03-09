@@ -1,7 +1,8 @@
 "use client"
 
-export default function Match({ name, hobbies, busRoute, busTime, yearLevel, major, faculty }) {
+export default function Match({ name, hobbies, busRoute, busTime, yearLevel, major, faculty, matchingHobbies }) {
     const hobbyList = hobbies ? hobbies.split(' ') : [];
+    const matchingHobbyList = matchingHobbies ? matchingHobbies.split(' ') : [];
     
     return (
       <div className="flex flex-col items-center p-6 max-w-xs rounded-lg bg-sky-300 shadow-lg text-black">
@@ -11,9 +12,20 @@ export default function Match({ name, hobbies, busRoute, busTime, yearLevel, maj
           <p className="text-sm mb-2">Year: {yearLevel}</p>
           <p className="text-sm mb-2">Faculty: {faculty}</p>
           <p className="text-sm mb-2">Major: {major}</p>
-
+          <div className="flex flex-wrap justify-center gap-2 mb-2">
+            Similar to you:
+            {matchingHobbyList.map((matchingHobby, index) => (
+              <span 
+                key={index} 
+                className="px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs text-black"
+              >
+                {matchingHobby}
+              </span>
+            ))}
+          </div>
           
           <div className="flex flex-wrap justify-center gap-2 mb-2">
+            All hobbies:
             {hobbyList.map((hobby, index) => (
               <span 
                 key={index} 
